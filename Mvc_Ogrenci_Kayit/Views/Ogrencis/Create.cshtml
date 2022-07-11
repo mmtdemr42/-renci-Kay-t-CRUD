@@ -1,0 +1,81 @@
+﻿@model Mvc_Ogrenci_Kayit.Models.Ogrenci
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h3>Yeni Öğrenci Kaydı</h3>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Öğrenci</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrenciAd, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrenciAd, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrenciAd, new { @class = "form-control", Placeholder = "Öğrenci Adı yazınız", Required = "" })
+
+                @Html.ValidationMessageFor(model => model.OgrenciAd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrenciSoyad, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrenciSoyad, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrenciSoyad, new { @class = "form-control", Placeholder = "Öğrenci Soyadı yazınız", Required = "" })
+
+                @Html.ValidationMessageFor(model => model.OgrenciSoyad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrenciEMail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrenciEMail, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrenciEMail, new { @class = "form-control", Placeholder = "Öğrenci E-mail yazınız", Required = "" })
+
+                @Html.ValidationMessageFor(model => model.OgrenciEMail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrenciImage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrenciImage, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrenciImage, new { @class = "form-control", Placeholder = "Öğrenci Resim url adresini yazınız"})
+
+                @Html.ValidationMessageFor(model => model.OgrenciImage, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrenciAdres, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrenciAdres, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrenciAdres, new { @class = "form-control", Placeholder="Adresi yazınız", Required="" })
+                @Html.ValidationMessageFor(model => model.OgrenciAdres, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Kaydet" class="btn btn-info" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Öğrenci Listesine Git", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

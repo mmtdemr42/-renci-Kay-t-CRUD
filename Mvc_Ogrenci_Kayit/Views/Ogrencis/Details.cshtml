@@ -1,0 +1,64 @@
+﻿@model Mvc_Ogrenci_Kayit.Models.Ogrenci
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Öğrenci Detayları</h2>
+
+<div>
+    <hr />
+    <div class="row">
+        <dt class="col-md-1">
+            <img class="img-responsive" , style="width:100px;" , src="@Model.OgrenciImage" alt="@Model.OgrenciSoyad" </img>
+        </dt>
+        <dl class="dl-horizontal col-md-6">
+            <dt>
+                @Html.DisplayNameFor(model => model.OgrenciAd)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OgrenciAd)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OgrenciSoyad)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OgrenciSoyad)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OgrenciEMail)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OgrenciEMail)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OgrenciImage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OgrenciImage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OgrenciAdres)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OgrenciAdres)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.OgrenciID }) |
+    @Html.ActionLink("Öğrenci Listesine Geri Dön", "Index")
+</p>
+
+
